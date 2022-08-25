@@ -9,7 +9,6 @@ public class EventPingReasign  implements MessageCreateListener{
 	public void onMessageCreate(MessageCreateEvent event) {
 		if (event.getMessageContent().equalsIgnoreCase(".eventpingrefresh")) {
 			if (event.getMessage().getAuthor().isServerAdmin()) {
-				//System.exit(0);
 				Server server = event.getServer().orElse(null);
 				Role evPing = server.getRoleById("1012437482400399391").orElse(null);
 				server.getMembers().forEach(user -> user.addRole(evPing).join());
